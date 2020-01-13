@@ -23,14 +23,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText shoplist = (EditText) findViewById(R.id.editShopText);
-                if (shoplist.getText().toString().length() <= 2 || shoplist.getText().toString().length() >= 15)
+                if (shoplist.getText().toString().length() <= 2 || shoplist.getText().toString().length() >= 15) {
                     Toast.makeText(MainActivity.this, "VIRHE!!! Tekstin pituus pitää olla yli 3 ja alle 15 merkkiä.",
                             Toast.LENGTH_LONG).show();
-                else
+                }
+                else {
                     shoppingList.add(shoplist.getText().toString() + "\n");
-                Toast.makeText(MainActivity.this, (shoplist.getText().toString() + " lisätty listalle"),
-                        Toast.LENGTH_LONG).show();
-                shoplist.getText().clear();
+                    Toast.makeText(MainActivity.this, (shoplist.getText().toString() + " lisätty listalle"),
+                            Toast.LENGTH_LONG).show();
+                    shoplist.getText().clear();
+                }
             }
 
         });
